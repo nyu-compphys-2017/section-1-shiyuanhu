@@ -6,10 +6,22 @@
 # which has default value of the empty string. If the user calls 
 # hello_world() without an argument, then the compiler uses ''
 # as the default value of the argument.
-def hello_world(name=''):
-    print "hello world!"
-    print name
-    return
+#def hello_world(name=''):
+ #   print "hello world!"
+  #  print name
+   # return
     
     
 #Implement the Riemann Sum approximation for integrals.
+
+from _future_ import division
+import numpy as np
+def riemann (a, b, N, func):
+    width = (b - a)/N
+  #  x = a
+  #  for i in range (0, N):
+  #     x = x + i*width
+    x_vals = np.arange(a+width, b+width, width)
+    func_values = func (x_vals)
+    result = np.sum (func_values*width)
+    return
